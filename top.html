@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>tg: <? echo $aok; ?></title>
+	<meta name="description" content="Private site of Tomasz Grining" />
+	<meta name="keywords" content="Tomasz, Grining" />
+	<meta name="contact" content="tomek@grining.eu" />
+   	<link type="text/css" rel="stylesheet" href="style.css" />
+</head>
+<body><?php include_once("analyticstracking.php") ?>
+	<div id="nav">
+<?
+for ($i = 0; $i < count($section); $i++) {
+	$ii=$i+1;
+	echo "		<div class='men' id='men$ii'><a href='$section[$i]'>$section[$i]</a></div>
+";
+}
+?>&nbsp;
+        <div id="logo">
+            <a href=http://grining.eu/><h1><? echo $przymiotniki1[(date('j')%4+date('W'))%4]; echo " "; echo $przymiotniki2[date('j')%4]; echo " "; echo date('l');?><span id="hmax"></span></h1></a>
+        </div>
+	</div>

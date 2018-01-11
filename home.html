@@ -1,0 +1,32 @@
+<h2>List of files</h2>
+<p>On this site curently:</p>
+<!--<li><a href="home">Index</a></li>
+<li><a href="run">Running</a></li>
+	<ul>
+		<li><a href="endo">Endomondo widget</a></li>
+		<li><a href="run#books">Running books</a></li>
+		<ul>
+			<li><a href="what-i-talk-about-when-i-talk-about-running">What I Talk About When I Talk About Running</a></li>
+			<li><a href="run-less-run-faster">Run Less, Run Faster</a></li>
+		</ul>
+	</ul>
+<li><a href="running">Contact</a></li>
+</ul>-->
+
+<?
+
+echo "<ul 
+    style='text-transform: capitalize;'>";
+for ($i = 0; $i < count($section); $i++) {
+	echo "<li> <a href={$section[$i]}>{$section[$i]}</a> </li>";
+	if (is_array($subsection[$section[$i]])) {
+		echo "<ul>";
+		for ($j = 0; $j < count($subsection[$section[$i]]); $j++){
+			echo "<li> <a href={$subsection[$section[$i]][$j]}>{$subsection[$section[$i]][$j]}</a> </li>";
+		}
+		echo "</ul>";
+	}
+}
+echo "</ul>";
+
+?>
