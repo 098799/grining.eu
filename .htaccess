@@ -1,0 +1,31 @@
+
+RewriteEngine on
+# -FrontPage-
+
+<Limit GET POST>
+order deny,allow
+deny from all
+allow from all
+</Limit>
+<Limit PUT DELETE>
+order deny,allow
+deny from all
+</Limit>
+AuthUserFile /home/ktu44425/public_html/_vti_pvt/service.pwd
+AuthGroupFile /home/ktu44425/public_html/_vti_pvt/service.grp
+#################################################################
+# Modyfikacja zmiennych PHP					#
+# Przykładowe włączenie zmiennej register_global		#
+# W celu aktywacji należy usunąć znak komentarza '#' z początku	#
+# Zmienna zostanie aktywowana w ciągu kilku minut od zmiany	#
+#################################################################
+<IfModule mod_php5.c>
+#php_value register_global 1
+</IfModule>
+AuthName grining.eu
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+RewriteCond %{HTTP_HOST} ^grining\.eu$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.grining\.eu$
+RewriteRule ^tiger$ "http\:\/\/tiger\.chem\.uw\.edu\.pl\/" [R=301,L]
+RewriteRule ^([^.|^/]*)$ index.php?i=$1 [QSA]
+
